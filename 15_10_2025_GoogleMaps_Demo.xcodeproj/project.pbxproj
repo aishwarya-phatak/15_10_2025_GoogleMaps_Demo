@@ -80,7 +80,6 @@
 				5D13B88378725661A0A16183 /* Pods-15_10_2025_GoogleMaps_Demo.debug.xcconfig */,
 				DA9E39E206F317CCA2B1065B /* Pods-15_10_2025_GoogleMaps_Demo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -130,6 +129,7 @@
 				};
 			};
 			buildConfigurationList = 685AC7CA2F3077490037BC78 /* Build configuration list for PBXProject "15_10_2025_GoogleMaps_Demo" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -168,9 +168,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-15_10_2025_GoogleMaps_Demo/Pods-15_10_2025_GoogleMaps_Demo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-15_10_2025_GoogleMaps_Demo/Pods-15_10_2025_GoogleMaps_Demo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -243,6 +247,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = V8WE74Y3MG;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = 15_10_2025_GoogleMaps_Demo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -272,6 +278,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = V8WE74Y3MG;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = 15_10_2025_GoogleMaps_Demo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
