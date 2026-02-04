@@ -1,11 +1,11 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '16.0'
 
 target '15_10_2025_GoogleMaps_Demo' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for 15_10_2025_GoogleMaps_Demo
-	pod 'GoogleMaps', '7.1.0'
-
+	
+	pod 'GoogleMaps', '10.8.0'
 end

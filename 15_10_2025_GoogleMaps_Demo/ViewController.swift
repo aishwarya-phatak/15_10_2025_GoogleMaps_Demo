@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     var puneMarker : GMSMarker?
     var mumbaiMarker : GMSMarker?
     var bitcodeMarker : GMSMarker?
+    var gmsMutablePath : GMSMutablePath?
     
     @IBOutlet weak var googleMaps1: GMSMapView!
     
@@ -20,8 +21,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         googleMaps1.delegate = self
         initializeSettings()
-
+        drawPolygon()
+        drawPolyline()
+        drawCircle()
         puneMarker = markerAndCameraSettings(lat: 18.5246, long: 73.8786, snippetToBeAdded: "Hello From Pune!", desc: "Punekar!")
+        
         mumbaiMarker = markerAndCameraSettings(lat: 18.9582, long: 72.8321, snippetToBeAdded: "Hello from Mumbai!", desc: "Mumbaikar!")
         bitcodeMarker = markerAndCameraSettings(lat: 18.32, long: 73.51, snippetToBeAdded: "Hello From Bitcode!", desc: "Bitcode Technologies!")
     }
@@ -59,6 +63,46 @@ class ViewController: UIViewController {
         googleMaps1.settings.compassButton = true
         googleMaps1.isMyLocationEnabled = true
         googleMaps1.mapType = .normal
+    }
+    
+    func drawCircle(){
+        let gmsCircle = GMSCircle(position:
+                                    CLLocationCoordinate2D(latitude: 18.5246,
+                                                           longitude:73.8786),
+                                   radius: 10.0)
+        gmsCircle.strokeColor = .brown
+        gmsCircle.strokeWidth = 4.0
+        gmsCircle.map = googleMaps1
+    }
+    
+    func drawPolygon(){
+        gmsMutablePath = GMSMutablePath()
+        gmsMutablePath?.add(CLLocationCoordinate2D(latitude: 18.5246, longitude: 73.8786))
+        gmsMutablePath?.add(CLLocationCoordinate2D(latitude: 23.0225, longitude: 72.5714))
+        gmsMutablePath?.add(CLLocationCoordinate2D(latitude: 24.5854, longitude: 73.7125))
+        gmsMutablePath?.add(CLLocationCoordinate2D(latitude: 22.7196, longitude:  75.8577))
+        gmsMutablePath?.add(CLLocationCoordinate2D(latitude: 19.1485, longitude: 77.3191))
+        
+        let polygon = GMSPolygon(path: gmsMutablePath)
+        polygon.fillColor = .cyan
+        polygon.strokeColor = .red
+        polygon.strokeWidth = 4.0
+        polygon.title = "mining area"
+        polygon.map = googleMaps1
+    }
+    
+    func drawPolyline(){
+        gmsMutablePath = GMSMutablePath()
+        gmsMutablePath?.add(CLLocationCoordinate2D(latitude: 16.7064, longitude: 74.2482))
+        gmsMutablePath?.add(CLLocationCoordinate2D(latitude: 17.4065, longitude: 78.4772))
+        gmsMutablePath?.add(CLLocationCoordinate2D(latitude: 15.3350, longitude: 76.4600))
+        gmsMutablePath?.add(CLLocationCoordinate2D(latitude: 14.5479, longitude: 74.3188))
+        gmsMutablePath?.add(CLLocationCoordinate2D(latitude: 16.7064, longitude: 74.2482))
+        
+        let polyline = GMSPolyline(path: gmsMutablePath)
+        polyline.strokeColor = .black
+        polyline.strokeWidth = 4.0
+        polyline.map = googleMaps1
     }
 }
 
